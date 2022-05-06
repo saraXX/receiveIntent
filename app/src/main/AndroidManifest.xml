@@ -14,10 +14,21 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-    </application>
 
+        </activity>
+
+<!--        TODO 2 : DECLARE THE OTHER ACTIVITY TAG IN MANIFEST FILE-->
+<!--        TODO 3 : SET EXPORTED TO TRUE , OTHERWISE IT WON'T APPEAR ON SHARING-->
+        <activity android:name=".SharedTextActivity" android:exported="true">
+<!--        TODO 4 : CREATE AN INTENT FILTER TO RECEIVE ANY INTENT DELIVER A TEXT MESSAGE  -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+    </application>
 </manifest>
